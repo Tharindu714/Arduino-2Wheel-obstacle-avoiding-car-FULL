@@ -32,6 +32,39 @@ const float SOUND_SPEED = 343.0; // m/s at 20 °C
 
 ---
 
+> **Note:**  
+> - Make sure you have the 10 kΩ pull‑down resistor on the LDR as shown.  
+> - Power rails (5 V & GND) feed all modules.  
+> - `D8`,`D7`,`D4` are example pins for buzzer and LEDs—match these to your code or swap as needed.
+
+---
+
+If you’d prefer a quick **ASCII‑style** sketch instead, here’s an alternate you can drop straight into any Markdown fence:
+
+```plaintext
+                +--------------------------------+
+                |           Arduino Uno         |
+                |                                |
+     +5V ──────>│ 5V                          GND│<────┐
+     GND ─────>│ GND                       RESET │     │
+                |                                |     │
+TRIG ←── D3 ───>│ D3/Trig HC‑SR04 Ultrasonic     |     │
+ECHO ←── D2 ───>│ D2/Echo HC‑SR04 Ultrasonic     |     │
+SERVO_SIG ────>│ D9 → Servo Signal              |     │
+MD_IN1 ───────>│ D10 → MotorDRV IN1             |     │
+MD_IN2 ───────>│ D11 → MotorDRV IN2             |     │
+MD_IN3 ───────>│ D6  → MotorDRV IN3             |     │
+MD_IN4 ───────>│ D5  → MotorDRV IN4             |     │
+LDR_PIN ──────>│ A0  → LDR (w/ 10 kΩ to GND)     |     │
+BUZ_PIN ──────>│ D8  → Buzzer                   |     │
+LED_L ────────>│ D7  → LED (Left)               |     │
+LED_R ────────>│ D4  → LED (Right)              |     │
+BT_TX ────────>│ TX0 → Bluetooth RX             |     │
+BT_RX ────────>│ RX0 → Bluetooth TX             |     │
+                +--------------------------------+
+
+```
+
 ## Ultrasonic Sensing Theory
 
 1. **Trigger & Echo**
